@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="DSA project">
+    <meta name="author" content="group7">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900"
+        rel="stylesheet">
+
+    <title>Queues and Stacks</title>
+
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-grad-school.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+
+</head>
+
+<body>
+
+    <header class="main-header clearfix" role="header">
+        <div class="logo">
+            <a href="#"><em>D</em> SA</a>
+        </div>
+        <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+        <nav id="menu" class="main-nav" role="navigation">
+            <ul class="main-menu">
+                <li><a href="index.html">Home for Dsa</a></li>
+                <li class="has-submenu"><a href="#">Major Topics</a>
+                    <ul class="sub-menu">
+                        <li><a href="introduction.html"> Introduction</a></li>
+                        <li><a href="algorithm_analysis.html">Algorithms analysis</a></li>
+                        <li><a href="arrays.html">Arrays</a></li>
+                        <li><a href="linkedlists.html"> LinkedLists</a></li>
+                        <li><a href="Queues_stacks.html"> <b>Queues & Stacks</b></a></li>
+                        <li><a href="priority_heaps.html"> Priority Queues & Heaps</a></li>         
+                        <li><a href="seaching.html"> Searching</a></li>
+                        <li><a href="sorting.html"> Sorting</a></li>
+                        <li><a href="graphs.html"> Graphs</a></li>
+                        <li><a href="Trees.html"> Trees and binary trees</a></li>
+                        <li><a href="hashing.html"> Hashing</a></li>
+                        <li><a href="tower.html"> Tower of Hanoi & Fibonacci Sq</a></li>
+                    </ul>
+                </li>
+                <li><a href="ourclass.html">Our class team(group)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="section video" data-section="section1">
+       
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 align-self-center">
+                    <div class="left-content">
+                        
+                        <h4>Stacks</h4>
+                        <h5 class="button_">(Implementation With in the content)</h5>
+                        <hr>
+                    <p class="wider"> A stack is an ordered list in which all insertions and
+                        deletions are made at one end called the top.
+                         If we have to make a stack of elements 20, 30, 40, 50, 60
+                        then 20 will be the bottommost element and 60 will be the
+                        topmost element in the stack.<br>
+                        <img class="resize" src="assets/images/stack1.png" alt="">
+
+                        It uses the Last In First Out or ‘LIFO’
+                        </p>                       
+                        <p>
+                            The operations which can be carried out
+                            on the stack. The operations are as follows:<br>
+                           <b>Stack():</b>  - creates a new stack that is empty. It needs no
+                            parameters and returns an empty stack.<br>
+                            <b>push(item):</b>  -adds a new item to the <b>top</b> of the stack. It
+                            needs the item and returns nothing.<br>
+                            <b>pop():</b>  - removes the <b>top</b> item from the stack. It needs no
+                            parameters and returns the item. The stack is modified.<br>
+                            <b>peek():</b> - returns the top item from the stack but does not
+                            remove it. It needs no parameters. The stack is not
+                            modified.<br>
+                            <b>is_empty():</b>- tests to see whether the stack is empty. It
+                            needs no parameters and returns a Boolean value.<br>
+                            <b>size():</b>- returns the number of items on the stack. It needs
+                            no parameters and returns an integer.<br>
+                        </p>              
+                        <img class="resize" src="assets/images/stack2.png" alt="">
+                        <p>  There are 2 major ways to implement a stack
+                             array<br>
+                             linked list<br>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 format align-self-center">
+                    <h6>Using Arrays</h6>
+                    <p class=""> 
+                        <b>Advantages</b><br> 
+                         best performance,and efficient<br>
+                        <b>Disadvantage</b> <br>
+                         fixed size<br>
+                        <strong>Basic implementation</strong> <br>
+                         initially empty array<br>
+                         field to record where the next data gets placed into<br>
+                         if array is full, push() returns false
+                         otherwise adds it into the correct spot<br>
+                         if array is empty, pop() returns null
+                        otherwise removes the next item in the stack<br>
+                        <img class="resize" src="assets/images/stack3.png" alt="">
+                      Below are algorithms of the main operations.Note: when top = -1 means the stack is empty.
+                </p>
+                <pre class="format">
+ int A[10]
+ int top := -1
+ push(x){
+     top := top +1
+     A[top] := x
+ }
+ pop(){
+     top := top - 1
+ }
+ isEmpty(){
+     if(top ==-1){
+         return true
+     }else return false
+ }
+ peek(){
+     return A[top]
+ }
+                </pre>
+                <p>
+                    <b>Space sharing</b>is done to allow two stacks to share the 
+                    same storage area.
+                    <img class="resize" src="assets/images/stack4.png" alt="">
+                    There are two stack errors that can occur:<br>
+                     <b>Underflow:</b> trying to pop (or peek at) an empty stack and
+                    <b> Overflow:</b> trying to push onto an already full stack
+                    
+                </p>
+                <h4 class="button_">Implementation for Stacks</h4>
+                Item<input type="number" id="newSt" min="0" max="100"> <span>
+                    <Button id="push" onclick="PushST()" class="button_">Push</Button></span>
+                <br><div id="pushed" class="push"></div><br>
+                
+                <span><Button id="" onclick="PopST()" class="button_">Pop</Button></span>
+                <br><div id="poped" class="push"></div><br>
+               
+               <span><Button onclick="peekST()" 
+                    class="button_">Peek</Button></span>
+                <span><div id="peeked" class="format"></div></span><br>
+                <span>The Stack's elements are=</span><span><div id="stack_" class="format"></div></span><br>
+                      
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section why-us" data-section="section2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 format align-self-top">
+                    <div class="left-content">
+                        <h4></h4>
+                        <p class="wider2"> 
+                            <b>Using linked lists</b><br>
+                            (singly linked list)<br>
+                            <b>Advantages:</b><br>
+                             always constant time to push or pop an element<br>
+                             can grow to an infinite size<br>
+                            <b>Disadvantages</b><br>
+                             The common case is the slowest of all the
+                            implementations<br>
+                             Can grow to an infinite size<br>
+                            <b>Basic implementation</b><br>
+                             list is initially empty<br>
+                             push() method adds a new item to the head of the
+                            list<br>
+                             pop() method removes the head of the list<br>
+
+                        </p>
+                        <img class="resize" src="assets/images/stack5.png" alt="">
+                        <p>after pop</p>
+                        <img class="resize" src="assets/images/stack6.png" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6 format align-self-top">
+                    <h5>What happens??</h5>                  
+                    <p class="wider">
+                        Since all the action happens at the top of a stack, a 
+                        singly-linked list (SLL) is a fine way to implement it.
+                        The header of the list points to the top of the stack<br>
+                         Pushing is inserting an element at the front of the 
+                        list<br>
+                         Popping is removing an element from the front of 
+                        the list<br>
+                        With a linked-list representation, overflow will not happen<br>
+                         Underflow can happen, and should be handled the same way
+                        as for an array implementation<br>
+                        When a node is popped from a list, and the node references
+                        an object, the reference (the pointer in the node) does not
+                        need to be set to null<br>
+                         Unlike an array implementation, it really is removed--you
+                        can no longer get to it from the linked list<br>
+                        Hence, garbage collection can occur as appropriate
+                        <img class="resize" src="assets/images/stack7.png" alt="">
+                    </p>
+                    
+                    
+                    
+                    
+            </div>
+            <div class="col-md-12">
+                <div class="section-heading">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section why-us" data-section="section4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 format align-self-center">
+                    <div class="left-content">
+                        <h4>Queues</h4>
+                        <h5 class="button_">(Implementation With in the content)</h5>
+                        <p>
+                            It is an ordered group of homogeneous items of elements.<br>
+                             Queues have two ends:<br>
+                             Elements are added at one end called the rear .<br>
+                             Elements are removed from the other end called the front.<br>
+                            The element added first is also removed first (FIFO: First
+                            In, First Out).
+                    </p> 
+                        
+                        <p>
+                            A queue is structured as an ordered
+                            collection of items which are added at one
+                            end, called the “rear,” and removed from the
+                            other end, called the “front.”<br>
+                            The queue operations are given below.<br>
+                            <b>Queue():</b> creates a new queue that is empty. It needs
+                            no parameters and returns an empty queue.<br>
+                            <b>enqueue(item):</b>adds a new item to the rear of the
+                            queue. It needs the item and returns nothing.
+                            <b>dequeue():</b>  removes the front item from the queue.
+                            It needs no parameters and returns the item. The
+                            queue is modified.<br>
+                            <b>is_empty():</b>  tests to see whether the queue is empty.
+                            It needs no parameters and returns a Boolean value.<br>
+                            <b>size(): </b>returns the number of items in the queue. It
+                            needs no parameters and returns an integer.
+                        </p>   
+                        <b>Array implementation of queues</b>
+                        <p>
+                            This is accomplished by inserting at one end (the rear) and 
+                            deleting from the other (the front).<br>
+                            In the example below..:<br>
+                            <img class="resize" src="assets/images/que1.png" alt="">
+                            To insert: put new element in location 4, and set rear to 4<br>
+                             To delete: take element from location 0, and set front to 1<br>
+                            <b>Algorithm for basic operations in stacks: </b>
+                            <pre class="format">
+ Int A[10]
+ front := -1 // empty queue
+ rear := -1
+ isEmpty(){
+    if front ==-1 && rear ==-1
+   return true
+   else return false
+ } 
+ Enqueue (){
+     if isFull()
+      return
+    else if isEmpty()
+        front := rear := 0
+        A[rear] := x
+    else 
+       rear := rear +1
+       A[rear] := x
+ }                 
+ Dequeue(){
+     if isEmpty()
+         return
+     else if front == rear //only one element in the queue
+        front:= rear:=-1
+    else
+        front := front+1
+
+ }            
+                                
+                            </pre>
+                            <b>Circular arrays</b>
+                            The concept of circular queue, has the main advantage of
+                            utilizing the space of the queue fully. as shown below
+                            <img class="resize" src="assets/images/que2.png" alt="">
+                            Elements were added to this queue in the order 
+                            11, 22, 33, 44, 55, and will be removed in the same 
+                            order<br> 
+                            In the Algorithm:<br>
+                             Use: front = (front + 1) % myQueue.length;<br>
+                            and: rear = (rear + 1) % myQueue.length;<br>
+                            To implement it more efficiently, Keep a gap 
+                            between elements: consider the queue full when it has 
+                            n-1 elements
+
+                        </p>
+
+                        
+
+
+
+             
+                    </div>
+                </div>
+                <div class="col-md-6 format align-self-top">
+                    
+                        <h4>Implementing queues using linked lists</h4>
+                        <p>
+                            Allocate memory for each new element dynamically<br>
+                            Link the queue elements together<br>
+                            Use two pointers, qFront and qRear, to mark the front and
+                            rear of the queue <br>
+                    </p> 
+                        
+                        <img class="resize" src="assets/images/que3.png" alt="">
+                        <p>
+                            <b>Enqueueing a node</b><br>
+                            To enqueue (add) a node:<br>
+                            Find the current last node<br>
+                            Change it to point to the new last node<br>
+                            Change the last pointer in the list header<br>
+                            <img class="resize" src="assets/images/que5.png" alt="">  
+
+                        </p>   
+                        <p>
+                        <b>Dequeue a node</b><br>
+                        To dequeue (remove) a node:<br>
+                         Copy the pointer from the first node into the header
+                         <br>
+                           <img class="resize" src="assets/images/que4.png" alt="">
+                        </p>
+                        <h4 class="button_">Implementation for Queue</h4>
+                           Item<input type="number" id="newqu" min="0" max="100"> <span>
+                    <Button id="push" onclick="enq()" class="button_">Enqueue</Button></span>
+                <br><div id="enqued" class="push"></div><br>
+                
+                <span><Button id="" onclick="deque()" class="button_">Dequeue</Button></span>
+                <br><div id="dequed" class="push"></div><br>
+               
+               <span><Button onclick="Top()" 
+                    class="button_">Front</Button></span>
+                <span><div id="attop" class="format"></div></span><br>
+                <span>The Queue's elements are=</span><span><div id="queue_" class="format"></div></span><br>
+                      
+                    
+                </div>
+               
+            </div>
+        </div>
+    </section>
+
+    <section class="section why-us" data-section="section4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 format ">
+                    <div class="left-content">
+                        <div class="main-button">
+                            <div class="scroll-to-section back"><a href="linkedlists.html">previous</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 format">
+                    <div class="main-button">
+                        <div class="next"><a href="priority_heaps.html">next</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p><i class="fa fa-copyright"></i> Copyright 2020 by Grad School
+
+                        | Designed by: Makerere csc 2021 class group 7 day </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/lightbox.js"></script>
+    <script src="assets/js/tabs.js"></script>
+    <script src="assets/js/video.js"></script>
+    <script src="assets/js/slick-slider.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+        //according to loftblog tut
+        $('.nav li:first').addClass('active');
+
+        var showSection = function showSection(section, isAnimate) {
+            var
+                direction = section.replace(/#/, ''),
+                reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+                reqSectionPos = reqSection.offset().top - 0;
+
+            if (isAnimate) {
+                $('body, html').animate({
+                    scrollTop: reqSectionPos
+                },
+                    800);
+            } else {
+                $('body, html').scrollTop(reqSectionPos);
+            }
+
+        };
+
+        var checkSection = function checkSection() {
+            $('.section').each(function () {
+                var
+                    $this = $(this),
+                    topEdge = $this.offset().top - 80,
+                    bottomEdge = topEdge + $this.height(),
+                    wScroll = $(window).scrollTop();
+                if (topEdge < wScroll && bottomEdge > wScroll) {
+                    var
+                        currentId = $this.data('section'),
+                        reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+                    reqLink.closest('li').addClass('active').
+                        siblings().removeClass('active');
+                }
+            });
+        };
+
+        $('.main-menu, .scroll-to-section').on('click', 'a', function (e) {
+
+            $('#menu').removeClass('active');
+            showSection($(this).attr('href'), true);
+        });
+
+        $(window).scroll(function () {
+            checkSection();
+        });
+    </script>
+
+</body>
+<script  language="JavaScript" type="text/javascript" src="assets/js/stacks.js"></script>
+<script  language="JavaScript" type="text/javascript" src="assets/js/Queues.js"></script>
+</html>

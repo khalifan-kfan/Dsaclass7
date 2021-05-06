@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="DSA project">
+    <meta name="author" content="group7">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900"
+        rel="stylesheet">
+
+    <title>Priority Queues and Heaps</title>
+
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-grad-school.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+
+</head>
+
+<body>
+
+    <header class="main-header clearfix" role="header">
+        <div class="logo">
+            <a href="#"><em>D</em> SA</a>
+        </div>
+        <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+        <nav id="menu" class="main-nav" role="navigation">
+            <ul class="main-menu">
+                <li><a href="index.html">Home for Dsa</a></li>
+                <li class="has-submenu"><a href="#">Major Topics</a>
+                    <ul class="sub-menu">
+                        <li><a href="introduction.html"> Introduction</a></li>
+                        <li><a href="algorithm_analysis.html">Algorithms analysis</a></li>
+                        <li><a href="arrays.html">Arrays</a></li>
+                        <li><a href="linkedlists.html">LinkedLists</a></li>
+                        <li><a href="Queues_stacks.html"> Queues & Stacks</a></li>
+                        <li><a href="priority_heaps.html"> <b>Priority Queues & Heap</b>s</a></li>         
+                        <li><a href="seaching.html"> Searching</a></li>
+                        <li><a href="sorting.html"> Sorting</a></li>
+                        <li><a href="graphs.html"> Graphs</a></li>
+                        <li><a href="Trees.html"> Trees and binary trees</a></li>
+                        <li><a href="hashing.html"> Hashing</a></li>
+                        <li><a href="tower.html"> Tower of Hanoi & Fibonacci Sq</a></li> 
+                    </ul>
+                </li>
+                <li><a href="ourclass.html">Our class team(group)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="section video" data-section="section1">
+       
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 align-self-center">
+                    <div class="left-content">
+                        
+                        <h4> Priority Queues </h4>
+                        <hr>
+                    <p class="wider">Priority queues are a generalization of stacks and queues.
+                         Rather than inserting and deleting elements in a fixed order, each element is assigned a
+                        priority represented by an integer. We always remove an element with the
+                        highest priority, which is given by the minimal integer priority assigned.<br>
+                        Priority queues often have a fixed size. <br>
+                        Our implementation uses a data structure call a <b>heap</b>.                  
+                        </p>                       
+                        <p>
+                            Some of the operations include:<br>
+                            <pre class="format">
+ heap heap_new(int capacity) /* create new heap of given capacity */
+//@requires capacity >= 0;
+;
+bool heap_empty(heap H); /* is H empty? */
+bool heap_full(heap H); /* is H full? */
+void heap_insert(heap H, int x) /* insert x into H */
+//@requires !heap_full(H);
+;
+int heap_min(heap H) /* find minimum */
+//@requires !heap_empty(H);
+;
+int heap_delmin(heap H) /* delete minimum */
+//@requires !heap_empty(H);
+
+                            </pre>
+                            Before we come to heaps, it is worth considering different implementation
+                            choices and consider the complexity of various operations.
+                            <img class="resize" src="assets/images/priority1.png" alt="">
+                        </p>              
+                        <h6>Heaps</h6>
+                        <p class=""> 
+                            A Heap is a special Tree-based data structure in which the tree is a
+                             complete binary tree. Generally, Heaps can be of two types:<br>
+    
+                        Max-Heap: In a Max-Heap the key present at the root node must be greatest among the keys
+                         present at all of it’s children. The same property must be recursively true for all
+                          sub-trees in that Binary Tree.<br>
+                        Min-Heap: In a Min-Heap the key present at the root node must be minimum among 
+                        the keys present at all of it’s children. The same property must be recursively 
+                        true for all sub-trees in that Binary Tree.<br>
+                    </p>
+                    <img class="resize" src="assets/images/priority2.png" alt="">
+                        
+                    </div>
+                </div>
+                <div class="col-md-6 format align-self-top">
+                   
+               
+                <p>
+                    <b>Considering heap invariant:</b>, there are 2 alternatives:<br>
+                    Heap ordering invariant, alternative (1) : The key of each node in the tree
+                    is less or equal to all of its childrens’ keys.<br>
+                    Heap ordering invariant, alternative (2) : The key of each node in the tree
+                    except for the root is greater or equal to its parent’s key<br>
+                    <b>Inserting into a Heap</b>
+                    When we insert into a heap, we already know (by the shape invariant)
+                    where a new node has to go. However, we cannot simply put the new
+                    data element there, because it might violate the ordering invariant. We do
+                    it anyway and then work to restore the invariant.<br>
+                    On the left is the heap before
+                    insertion of data with key 1; on the right after, but before we have restored
+                    the invariant.
+                    <img class="resize" src="assets/images/priority4.png" alt="">
+                    This is fixed by swappong nodes as shown below with 1 and 3 since 3>1
+                    <img class="resize" src="assets/images/prio6.png" alt="">
+                    then lastly since 2>1                   
+                    
+                </p>
+                <img class="resize" src="assets/images/prio7.png" alt="">
+
+                                          
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section why-us" data-section="section2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 format align-self-top">
+                    <div class="left-content">
+                        <h4></h4>
+                        <p class="wider2"> 
+                            <b>Deleting the Minimal Element</b><br>
+                            To delete the minimal element from the priority queue we cannot simple delete the root node where the minimal element is stored, because we
+would not be left with a tree. But by the shape invariant we know what the
+tree has to look like. So we take the last element in the tree and move it to
+the root, and delete that last node.<br>
+<img class="resize" src="assets/images/prio8.png" alt="">
+However, the node that is now at the root might have a strictly greater key
+one or both of its children, which would violate the ordering invariant.
+If the ordering invariant in indeed violated, we swap the node with the
+smaller of its children
+<img class="resize" src="assets/images/prio9.png" alt="">
+Unfortunately, we may not be done, because the invariant might now
+be violated at place where the root ended up. If not, we stop. If yes, we
+compare the children as before and swap with the smaller one.
+                        
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 format align-self-top">
+                    <img class="resize" src="assets/images/prio9.png" alt="">
+                    We stop this downward movement of the new node if either the ordering invariant is satisfied, or we reach a leaf. In both cases we have fully
+                    restored the ordering invariant. This process of restoring the invariant is
+                    called sifting down, since we move a node down the tree. As in the case for
+                    insert, the number of operations is bounded by the number of levels in the
+                    tree, which is O(log(n)) as promised.
+                    <b> Finding the Minimal Element</b><br>
+                    Since the minimal element is at the root, finding the minimal element is a
+                    constant-time operation.
+                 
+                    <div class="main-button">
+                        <div class="scroll-to-section"><a href="#">Implementation</a></div>
+                    </div>
+                                       
+            </div>
+            <div class="col-md-12">
+                <div class="section-heading">
+
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section video" data-section="section5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 align-self-center">
+              <div class="left-content">
+                
+                <h4>Watch the video to understand <em>Proirity queues more</em></h4>
+                <p>
+                    Just in case you had a hard time following, below is a you tube video by 
+                    :
+                    <b>Carleton Moore</b> from university of Hawaie, hope it will give you a broader explanation of the concept
+                </p>
+                
+            </div>
+            <div class="col-md-6">
+              <article class="video-item">
+                <div class="video-caption">
+                  <h4>Youtube Tutorial for you</h4>
+                </div>
+                <figure>
+                  <a href="https://www.youtube.com/watch?v=hj9lOSJCy-U" class="play"><img src="assets/images/prioritty.png"></a>
+                </figure>
+              </article>
+            </div>
+          </div>
+        </div>
+      
+   
+
+    <section class="section why-us" data-section="section4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 format ">
+                    <div class="left-content">
+                        <div class="main-button">
+                            <div class="scroll-to-section back"><a href="Queues_stacks.html">previous</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 format">
+                    <div class="main-button">
+                        <div class="next"><a href="seaching.html">next</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p><i class="fa fa-copyright"></i> Copyright 2020 by Grad School
+
+                        | Designed by: Makerere csc 2021 class group 7 day </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/lightbox.js"></script>
+    <script src="assets/js/tabs.js"></script>
+    <script src="assets/js/video.js"></script>
+    <script src="assets/js/slick-slider.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+        //according to loftblog tut
+        $('.nav li:first').addClass('active');
+
+        var showSection = function showSection(section, isAnimate) {
+            var
+                direction = section.replace(/#/, ''),
+                reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+                reqSectionPos = reqSection.offset().top - 0;
+
+            if (isAnimate) {
+                $('body, html').animate({
+                    scrollTop: reqSectionPos
+                },
+                    800);
+            } else {
+                $('body, html').scrollTop(reqSectionPos);
+            }
+
+        };
+
+        var checkSection = function checkSection() {
+            $('.section').each(function () {
+                var
+                    $this = $(this),
+                    topEdge = $this.offset().top - 80,
+                    bottomEdge = topEdge + $this.height(),
+                    wScroll = $(window).scrollTop();
+                if (topEdge < wScroll && bottomEdge > wScroll) {
+                    var
+                        currentId = $this.data('section'),
+                        reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+                    reqLink.closest('li').addClass('active').
+                        siblings().removeClass('active');
+                }
+            });
+        };
+
+        $('.main-menu, .scroll-to-section').on('click', 'a', function (e) {
+
+            $('#menu').removeClass('active');
+            showSection($(this).attr('href'), true);
+        });
+
+        $(window).scroll(function () {
+            checkSection();
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="DSA project">
+    <meta name="author" content="group7">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900"
+        rel="stylesheet">
+
+    <title>Linked Lists in DSA</title>
+
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-grad-school.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+
+</head>
+
+<body>
+
+    <header class="main-header clearfix" role="header">
+        <div class="logo">
+            <a href="#"><em>D</em> SA</a>
+        </div>
+        <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+        <nav id="menu" class="main-nav" role="navigation">
+            <ul class="main-menu">
+                <li><a href="index.html">Home for Dsa</a></li>
+                <li class="has-submenu"><a href="#">Major Topics</a>
+                    <ul class="sub-menu">
+                        <li><a href="introduction.html"> Introduction</a></li>
+                        <li><a href="algorithm_analysis.html">Algorithms analysis</a></li>
+                        <li><a href="arrays.html">Arrays</a></li>
+                        <li><a href="linkedlists.html"> <b>LinkedLists</b></a></li>
+                        <li><a href="Queues_stacks.html"> Queues & Stacks</a></li>
+                        <li><a href="priority_heaps.html"> Priority Queues & Heaps</a></li>         
+                        <li><a href="seaching.html"> Searching</a></li>
+                        <li><a href="sorting.html"> Sorting</a></li>
+                        <li><a href="graphs.html"> Graphs</a></li>
+                        <li><a href="Trees.html"> Trees and binary trees</a></li>
+                        <li><a href="hashing.html"> Hashing</a></li>
+                        <li><a href="tower.html"> Tower of Hanoi & Fibonacci Sq</a></li> 
+                    </ul>
+                </li>
+                <li><a href="ourclass.html">Our class team(group)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="section video" data-section="section1">
+       
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 align-self-center">
+                    <div class="left-content">
+                        
+                        <h4>Linked lists</h4>
+                        <h5 class="button_">( Implementation With in the content)</h5>
+                        <hr>
+                    <p class="wider">Linked List -consist of data items called nodes. Each data
+                        element contains two field; information field and a link field
+                        connected to another data items.
+                        <br>
+                        . Unlike arrays, they are a dynamic data structure,
+                         resizable at run-time. 
+                         Also, the insertion and deletion operations are efficient and easily implemented.
+
+                        </p>
+                        <img class="resize" src="assets/images/linked2.png" alt="">
+                        <p>
+                            The principal benefit of a linked list over a conventional array is 
+                            that the list elements can be easily inserted or removed without reallocation
+                             or reorganization of the entire 
+                            structure because the data items need not be stored contiguously in memory or on disk
+                        </p>              
+                    </div>
+                </div>
+                <div class="col-md-6 format align-self-center">
+
+                    <h6>Types of Linked lists</h6>
+                    <p class=""> 
+                       Ther are three main types of linked listis as named below.<br>
+                       Linked list is divided into three:<br>
+                        Singly linked list<br>
+                        Doubly linked list<br>
+                        Circularly linked list<br>
+                            <b>Singly linked lists</b> 
+                            A singly linked list is a
+                            concrete data structure
+                            consisting of a sequence
+                            of nodes<br>
+                            Each node stores:<br>
+                             element<br>
+                             link to the next node
+                          <br>
+                          graphical representations below
+
+                </p>
+                <img class="resize" src="assets/images/linked1.png" alt="">
+                                  
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section why-us" data-section="section2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 format align-self-center">
+                    <div class="left-content">
+                        <h4></h4>
+                        <p class="wider2"> 
+                            <b>Example of Node class implements in java</b><br>
+                            <p>(singly linked list)</p>
+                            <pre class="format">
+                                public class Node {
+                                    // Instance variables:
+                                    private Object element;
+                                    private Node next;
+                                    /** Creates a node with null references to its element and next node. */
+                                    public Node() {
+                                    this(null, null);
+                                    }
+                                    /** Creates a node with the given element and next node. */
+                                    public Node(Object e, Node n) {
+                                    element = e;
+                                    next = n;
+                                    }
+                                    // Accessor methods:
+                                    public Object getElement() {
+                                    return element;
+                                    }
+                                    public Node getNext() {
+                                    return next;
+                                    }
+                                    // Modifier methods:
+                                    public void setElement(Object newElem) {
+                                    element = newElem;
+                                    }
+                                    public void setNext(Node newNext) {
+                                    next = newNext;
+                                    }
+                                    }
+                                    
+                            </pre>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 format align-self-center">
+                    <h5>Dealing with the operating class </h5>                  
+                    <pre class="format">
+  public class SLinkedList {
+   protected Node head; // head node of the list
+    /** Default constructor that creates an empty list
+    */
+        public SLinkedList() {
+            head = null;
+        }
+    // ... update and search methods would go here ...
+    }                                  
+                    </pre>
+                    <b>Inserting at the Head.</b><br>
+                    1. Allocate a new node<br>
+                    2. Insert new element<br>
+                    3. Make new node point to
+                    old head<br>
+                    4. Update head to point to 
+                    new node<br>
+                    <img class="resize" src="assets/images/linked3.png" alt="">
+                    <p><b>Removing at the Head</b><br>
+                        1.Update head to 
+                        point to next node 
+                        in the list<br>
+                        2. Allow garbage 
+                        collector to 
+                        reclaim the 
+                        former first node</p>
+
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="section-heading format">
+                    <h2>Implementation</h2><br>
+
+                    <p>Enter the values to test with here; </p>
+
+                   element<input type="number" id="new" min="0" max="100"> <span><Button id="add" onclick="Add_new()" class="button_">Add</Button></span>
+                    <br><div id="adding" class="push"></div><br>
+                    element<input type="number" id="out" min="0" max="100"> <span><Button id="" onclick="Remove()" class="button_">Remove</Button></span>
+                    <br><div id="removed" class="push"></div><br>
+                    <i>element</i><input type="number" id="AT" min="0" max="100"><span><i>index</i><input type="number" id="ATIND" min="0" max="100"></span> 
+                    <span><Button onclick="insertAt()" class="button_">InsertAt</Button></span>
+                    <span><div id="inserted" class="format"></div></span><br>
+                    element<input type="number" id="el_index" min="0" max="100"> <span><Button onclick="find()" class="button_">find position</Button></span>
+                    <span><div id="index_of" class="format"></div></span><br>
+                    <span>List size =</span><span><div id="size" class="format"></div></span><br>
+                    <span>The list's elements are=</span><span><div id="list_" class="format"></div></span><br>
+
+
+
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section why-us" data-section="section4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 format align-self-center">
+                    <div class="left-content">
+                        <h6>The JavaScript code used for the above Implementation</h6><br>
+                        <pre class="format"> 
+                        class Node {
+                            constructor(item){
+                                this.item =  item;
+                                this.next = null;
+                            }}        
+                        class LinkedList{
+                            constructor()
+                            {
+                                this.head = null;
+                                this.size = 0;
+                            }
+                            add(item){
+                                //new node
+                                var node = new Node(item);
+                                //store current node
+                                var current;
+                                //if list is empty element should be head
+                                if(this.head==null){
+                                    this.head= node;
+                                }else{
+                                    current= this.head;
+                                    //iterate to end of the list
+                                    while(current.next){
+                                        current = current.next;
+                                    }
+                                    //add node
+                                    current.next = node;
+                                }
+                                this.size++;
+                               return item;
+                            }
+                            isEmpty(){
+                                return this.size == 0;
+                            }
+                            SizeOfList(){
+                                return this.size; 
+                           }
+                           //at a position
+                           insertAt(item, index){
+                            if (index < 0 || index > this.size) 
+                                return console.log("Please enter a valid index.");
+                            else {
+                                // creates a new node
+                                var node = new Node(item);
+                                var curr, prev;
+                                curr = this.head;
+                                // add the element to the
+                                // first index
+                                if (index == 0) {
+                                    node.next = this.head;
+                                    this.head = node;
+                                } else {
+                                    curr = this.head;
+                                    var it = 0;
+                                    // iterate over the list to find
+                                    // the position to insert
+                                    while (it < index) {
+                                        it++;
+                                        prev = curr;
+                                        curr = curr.next;
+                                    }
+                                    // adding an element
+                                    node.next = curr;
+                                    prev.next = node;
+                                }
+                                this.size++;
+                                return item;
+                            }
+                        }
+                        removeElement(item)
+                        {
+                            var current = this.head;
+                            var prev = null;
+                         
+                            // iterate over the list
+                            while (current != null) {
+                                // comparing element with current
+                                // element if found then remove the
+                                // and return true
+                                if (current.item === item) {
+                                    if (prev == null) {
+                                        this.head = current.next;
+                                    } else {
+                                        prev.next = current.next;
+                                    }
+                                    this.size--;
+                                    return current.element;
+                                }
+                                prev = current;
+                                current = current.next;
+                            }
+                            // dint get the element
+                            return -1;
+                        }
+                        
+                    </pre>
+                      
+             
+                    </div>
+                </div>
+                <div class="col-md-6 format align-self-top">
+                    <pre class="format">
+                        indexOf(item)
+                        {
+                            var count = 0;
+                            var current = this.head;
+                         
+                            // iterate over the list
+                            while (current != null) {
+                                // compare each element of the list
+                                // with given element
+                                if (current.item === item)
+                                    return count;
+                                count++;
+                                current = current.next;
+                            }
+                         
+                            // not found
+                            return -1;
+                        }
+                        // prints the list items
+                        printList()
+                        {
+                            var curr = this.head;
+                            var str = "";
+                            while (curr) {
+                                str += curr.item + " ";
+                                curr = curr.next;
+                            }
+                            return str;
+                        }
+                        }
+                        class Linkedrun{    
+                           constructor(){
+                             this.list = new LinkedList(); 
+                           }   
+                        }
+                        var  run = new Linkedrun();
+                    </pre>
+                    <h4>Doubly Linked List</h4>
+                    <p class="wider">
+                    A doubly linked list is often
+                    more convenient!<br>
+                    =>Nodes store:<br>
+                     element<br>
+                     link to the previous node<br>
+                     link to the next node<br>
+                     Special trailer and header
+                    nodes<br> 
+                </p> 
+                    <img class="resize" src="assets/images/intro-4.png" alt="">
+                    <img class="resize" src="assets/images/linked4.png" alt="">
+                    <p>
+                        Above is an illustraation of how items are linked in the 
+                    </p>  
+                    <p class="wider"> 
+
+                    <b>Circular Linked List</b><br>
+                    Circular Linked List is a variation of Linked list in which the first element points to the last element and the last element points to the first element.
+                     Both Singly Linked List and Doubly Linked List can be made into a circular linked list.
+                     <br>
+                     In singly linked list, the next pointer of the last node points to the first node
+                     <img class="resize" src="assets/images/linked5.png" alt="">  
+                     In doubly linked list, the next pointer of the last node points to the
+                      first node and the previous pointer of the first node points to the last node
+                       making the circular in both directions.
+                       <img class="resize" src="assets/images/linked6.png" alt=""> 
+
+                    </p>
+                   
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="section why-us" data-section="section4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 format ">
+                    <div class="left-content">
+                        <div class="main-button">
+                            <div class="scroll-to-section back"><a href="arrays.html">previous</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 format">
+                    <div class="main-button">
+                        <div class="next"><a href="Queues_stacks.html">next</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p><i class="fa fa-copyright"></i> Copyright 2020 by Grad School
+
+                        | Designed by: Makerere csc 2021 class group 7 day </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/lightbox.js"></script>
+    <script src="assets/js/tabs.js"></script>
+    <script src="assets/js/video.js"></script>
+    <script src="assets/js/slick-slider.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+        //according to loftblog tut
+        $('.nav li:first').addClass('active');
+
+        var showSection = function showSection(section, isAnimate) {
+            var
+                direction = section.replace(/#/, ''),
+                reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+                reqSectionPos = reqSection.offset().top - 0;
+
+            if (isAnimate) {
+                $('body, html').animate({
+                    scrollTop: reqSectionPos
+                },
+                    800);
+            } else {
+                $('body, html').scrollTop(reqSectionPos);
+            }
+
+        };
+
+        var checkSection = function checkSection() {
+            $('.section').each(function () {
+                var
+                    $this = $(this),
+                    topEdge = $this.offset().top - 80,
+                    bottomEdge = topEdge + $this.height(),
+                    wScroll = $(window).scrollTop();
+                if (topEdge < wScroll && bottomEdge > wScroll) {
+                    var
+                        currentId = $this.data('section'),
+                        reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+                    reqLink.closest('li').addClass('active').
+                        siblings().removeClass('active');
+                }
+            });
+        };
+
+        $('.main-menu, .scroll-to-section').on('click', 'a', function (e) {
+
+            $('#menu').removeClass('active');
+            showSection($(this).attr('href'), true);
+        });
+
+        $(window).scroll(function () {
+            checkSection();
+        });
+    </script>
+
+</body>
+<script  language="JavaScript" type="text/javascript" src="assets/js/linkedlistimplementation.js"></script>
+</html>

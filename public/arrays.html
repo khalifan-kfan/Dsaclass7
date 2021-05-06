@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="DSA project">
+    <meta name="author" content="group7">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900"
+        rel="stylesheet">
+
+    <title>Arrays in DSA</title>
+
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-grad-school.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+
+</head>
+
+<body>
+
+    <header class="main-header clearfix" role="header">
+        <div class="logo">
+            <a href="#"><em>D</em> SA</a>
+        </div>
+        <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+        <nav id="menu" class="main-nav" role="navigation">
+            <ul class="main-menu">
+                <li><a href="index.html">Home for Dsa</a></li>
+                <li class="has-submenu"><a href="#">Major Topics</a>
+                    <ul class="sub-menu">
+                        <li><a href="introduction.html"> Introduction</a></li>
+                        <li><a href="algorithm_analysis.html">Algorithms analysis</a></li>
+                        <li><a href="arrays.html"><b>Arrays</b></a></li>
+                        <li><a href="linkedlists.html"> LinkedLists</a></li>
+                        <li><a href="Queues_stacks.html"> Queues & Stacks</a></li>
+                        <li><a href="priority_heaps.html"> Priority Queues & Heaps</a></li>         
+                        <li><a href="seaching.html"> Searching</a></li>
+                        <li><a href="sorting.html"> Sorting</a></li>
+                        <li><a href="graphs.html"> Graphs</a></li>
+                        <li><a href="Trees.html"> Trees and binary trees</a></li>
+                        <li><a href="hashing.html"> Hashing</a></li>
+                        <li><a href="tower.html"> Tower of Hanoi & Fibonacci Sq</a></li> 
+                    </ul>
+                </li>
+                <li><a href="ourclass.html">Our class team(group)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="section video" data-section="section1">
+       
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 align-self-center">
+                    <div class="left-content">
+                        
+                        <h4>Arrays </h4>
+                        <h5 class="button_">(Methods implementation are below the Algorithm examples)</h5>
+                        <hr>
+                    <p>An array is a data structure for storing more than one data item that has a similar data type. The items
+                         of an array are allocated at adjacent memory locations.
+                          These memory locations are called elements of that array.<br>
+                          An array is a container of elements.
+                          Elements have a specific value and data type, like "ABC", TRUE or FALSE, etc.
+                          Each element also has its own index, which is used to access the element.<br>
+                          We are going to Discuss In Java programming language.
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6 format align-self-center">
+
+                    <h6>Why do we need arrays.</h6>
+                    <p class=""> 
+                       Arrays can be applied in various programming languages for  various reasons that can include:<br>
+                       Arrays are best for storing multiple values in a single variable<br>
+                        Arrays are better at processing many values easily and quickly<br>
+                        Arrays are used to implement other abstract data structures like Queues and stacks<br>
+                        Sorting and searching the values is easier in arrays           
+                </p>
+                    
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section why-us" data-section="section2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 format align-self-center">
+                    <div class="left-content">
+                        <h4></h4>
+                        <p class="wider2"> 
+                            <b>Structure of an array</b><br>
+                            <img class="resize" src="assets/images/arrays.png" alt="">
+
+                            Basically the diagram above is trying to display the graphical representation  of an array.
+                            Arrays contain items of the same datatype and these items are accessed through their array indices
+                            as shown above.
+                            Arrays usually have a fixed number of elements they can hold.<br>
+                            In java an empty array is declared by this statement:<i><br>int arr[]=new int[n];</i> <br>
+                            Where n is the size of the array and int means it will contain integers.<br>
+                            But these arrays can also be declared with there elements an in the statement below:
+                            <br>
+                            int numbers[] = {300,200,100,50,0};
+
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 format align-self-center">
+                    <h5>Operations on Arrays </h5>
+                    There are 5 main Operations as named below:
+                    <p>
+                        Traverse −<br>
+                        Print all the elements in the array one by one.
+                        This can be effected using any kind of loop<br>
+                        Insertion −<br>
+                        Adds an element at the given index.
+                        eg. array[1] = 1;
+                        <br>
+                        Deletion − <br>
+                        Deletes an element at the given index.
+                        Can also Delete a whole array.
+                        eg. array.remove(new Integer(1)) // for the value 1
+                        array.removeAt(1)//for index
+                        <br>
+                        Search −<br>
+                         Searches an element in the array using the given index or the value.
+                         Can also be effected using a loop.
+                         <br>
+                        Update −<br>
+                        Updates an element at the given index.
+                        For example array[0] = 1 // making any thing at index 
+                         <br>
+                         
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="section-heading">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section why-us" data-section="section4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 format align-self-center">
+                    <div class="left-content">
+                        <h4>Code examples of the Operations </h4>
+                        <strong>Traversing</strong>
+                        <pre class="format">
+                      
+public class Main {
+public static void main(String[] args) {
+    int[] intArr = {7,4,0,32,8,75,73,9};
+    System.out.println("The array elements are ");
+    for (int i = 0; i < intArr.length; i++) {
+         System.out.print(intArr[i] + ",");
+    }
+}
+}
+                        </pre>
+                        <p>Outcome-7,4,0,32,8,75,73,9</p>
+                        <strong>Insertion</strong>
+                        <pre class="format">
+
+import java.util.Scanner;
+public class Main
+{
+ public static void main(String[] args) 
+ {
+ int n = 5, pos, x;
+ int intArr[] = new int[n+1];
+ Scanner sc = new Scanner(System.in);
+ System.out.println("Enter the array elements : ");
+ for(int i = 0; i < n; i++)
+ {
+ intArr[i] = sc.nextInt();
+ }
+ System.out.println("Array elements before insertion : ");
+ for(int i = 0 ;i < n ; i++)
+ {
+ System.out.print(intArr[i] + " ");
+ }
+ pos = 3;
+ x = 48;
+ for(int i = (n-1); i >= (pos-1); i--)
+ {
+ intArr[i+1] = intArr[i];
+ }
+ intArr[pos-1] = x;
+ System.out.println("\nArray elements after insertion:");
+ for(int i = 0; i < n; i++)
+ {
+ System.out.print(intArr[i] + " ");
+ }
+ System.out.print(intArr[n]);
+ }
+}
+                        </pre>
+                        <p>
+                            Output- <br>
+                            Enter the array elements :<br>
+                            1 2 3 4 5<br>
+                            Array elements before insertion :<br>
+                            1 2 3 4 5<br>
+                            Array elements after insertion:
+                            1 2 3 48 4 5<br>
+
+                        </p>
+
+                        <div>
+                            <label for="">Enter 5 numbers for the array (0-100):</label>
+                        
+                            <input 
+                            type="number" id="0" min="0" max="100"> <input type="number" id="1" 
+                                    min="0" max="100">
+                                     <input type="number" id="2" 
+                                      min="0" max="100">
+                                       <input type="number" id="3" 
+                                        min="0" max="100">
+                                        <input type="number" id="4" 
+                                          min="0" max="100"><br>
+                                          <p>Number to insert</p>
+                                          <input type="number" id="5" 
+                                          min="0" max="100">
+                                          
+                                    
+                          </div>
+
+                        <div class="main-button">
+                           <button class ="button_" id = "" onclick="insert()">Run</button>
+                        </div>
+                        <div class="format" id="before"></div>
+                        <div class="format" id="after"></div>              
+                       
+    
+                    </div>
+                </div>
+                <div class="col-md-6 format align-self-center">
+                    
+                        <b>Searching</b>
+                    
+                        <pre class="format">
+import java.util.Scanner;
+public class Main
+{
+ public static void main(String[] args) 
+ {
+ int search_ele = 1;
+ int n = 5, flag = 0;
+ Scanner s = new Scanner(System.in);
+ int intArr[] = new int[n];
+ Scanner sc = new Scanner(System.in);
+ System.out.println("Enter the array elements : ");
+ for(int i = 0; i < n; i++)
+ {
+ intArr[i] = sc.nextInt();
+ }
+ System.out.println("The Array elements are: ");
+ for(int i = 0 ;i < n ; i++)
+ {
+ System.out.print(intArr[i] + " ");
+ }
+ for(int i = 0; i < 5; i++)
+ {
+ if(intArr[i] == search_ele)
+ {
+ flag = 1;
+ break;
+ }
+ }
+ if(flag == 1)
+ {
+ System.out.println("\nElement Found");
+ }
+ else
+ {
+ System.out.println("\nElement not found");
+ }
+ }
+}
+                        </pre>
+                        <p>
+                            Output-<br>
+                                Enter the array elements :<br>
+                                1 2 3 4 5 <br>
+                                The Array elements are:<br>1 2 3 4 5<br>Element Found<br>
+
+                                Enter values below to test.
+                            </p>
+                            <div>
+                                <label for="">Enter 5 numbers (0-100):</label>
+                            
+                                <input type="number" id="0a" 
+                                       min="0" max="100"> 
+                                       <input type="number" id="1a"
+                                        min="0" max="100">
+                                        <input type="number" id="2a" 
+                                          min="0" max="100">
+                                         <input type="number" id="3a" 
+                                            min="0" max="100">
+                                            <input type="number" id="4a" 
+                                              min="0" max="100"><br>
+                                              <p>Number to get</p>
+                                              <input type="number" id="5a" 
+                                              min="0" max="100">
+                                        
+                              </div>
+
+
+                            <div class="main-button">
+                               <button class="button_" onclick="seach()">Run</button>
+                            </div>
+                            <div class="format" id="before-1"></div>
+                            <div class="format" id="result"></div> 
+                        
+                        
+                </div>
+               
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section why-us" data-section="section4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 format ">
+                    <div class="left-content">
+                        <div class="main-button">
+                            <div class="scroll-to-section back"><a href="algorithm_analysis.html">previous</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 format">
+                    <div class="main-button">
+                        <div class="next"><a href="linkedlists.html">next</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p><i class="fa fa-copyright"></i> Copyright 2020 by Grad School
+
+                        | Designed by: Makerere csc 2021 class group 7 day </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/lightbox.js"></script>
+    <script src="assets/js/tabs.js"></script>
+    <script src="assets/js/video.js"></script>
+    <script src="assets/js/slick-slider.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+        //according to loftblog tut
+        $('.nav li:first').addClass('active');
+
+        var showSection = function showSection(section, isAnimate) {
+            var
+                direction = section.replace(/#/, ''),
+                reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+                reqSectionPos = reqSection.offset().top - 0;
+
+            if (isAnimate) {
+                $('body, html').animate({
+                    scrollTop: reqSectionPos
+                },
+                    800);
+            } else {
+                $('body, html').scrollTop(reqSectionPos);
+            }
+
+        };
+
+        var checkSection = function checkSection() {
+            $('.section').each(function () {
+                var
+                    $this = $(this),
+                    topEdge = $this.offset().top - 80,
+                    bottomEdge = topEdge + $this.height(),
+                    wScroll = $(window).scrollTop();
+                if (topEdge < wScroll && bottomEdge > wScroll) {
+                    var
+                        currentId = $this.data('section'),
+                        reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+                    reqLink.closest('li').addClass('active').
+                        siblings().removeClass('active');
+                }
+            });
+        };
+
+        $('.main-menu, .scroll-to-section').on('click', 'a', function (e) {
+
+            $('#menu').removeClass('active');
+            showSection($(this).attr('href'), true);
+        });
+
+        $(window).scroll(function () {
+            checkSection();
+        });
+    </script>
+
+</body>
+<script  language="JavaScript" type="text/javascript" src="assets/js/implementation.js"></script>
+
+</html>
