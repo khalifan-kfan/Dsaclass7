@@ -1,10 +1,4 @@
-/*
-    
-TemplateMo 557 Grad School
 
-https://templatemo.com/tm-557-grad-school
-
-*/
 
 
 @import url(fontawesome.css);
@@ -234,10 +228,14 @@ a.menu-link { display: none; }
 .main-menu li .sub-menu {
     position: absolute;
     width: 160px;
+    height: 500px;
+    overflow: hidden;
+   overflow-y: scroll;
     background-color: #18233a;
     opacity: 0;
     visibility: hidden;
     transition: all 0.5s;
+
 }
 
 .main-menu li:hover .sub-menu {
@@ -267,7 +265,7 @@ a.menu-link { display: none; }
 }
 
 .main-menu li .sub-menu li a {
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 500;
     padding: 0px 15px;
     letter-spacing: 0.5px;

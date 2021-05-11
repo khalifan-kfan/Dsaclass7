@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900"
         rel="stylesheet">
 
-    <title>Tress and binary trees</title>
+    <title>Fibonacci</title>
 
 
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -32,21 +32,20 @@
         <nav id="menu" class="main-nav" role="navigation">
             <ul class="main-menu">
                 <li><a href="index.html">Home for Dsa</a></li>
-                <li class="has-submenu"><a href="#">Major Topics</a>
+                <li class="has-submenu"><a href="">Major Topics (Implementations with in)</a>
                     <ul class="sub-menu">
-                        <li><a href="introduction.html"> Introduction</a></li>
-                        <li><a href="algorithm_analysis.html"><b>Algorithms analysis</b></a></li>
+                        <li><a href="introduction.html"> <em>Introduction</em></a></li>
+                        <li><a href="algorithm_analysis.html"> Algorithms analysis</a></li>
                         <li><a href="arrays.html"> Arrays</a></li>
                         <li><a href="linkedlists.html"> LinkedLists</a></li>
                         <li><a href="Queues_stacks.html"> Queues & Stacks</a></li>
                         <li><a href="priority_heaps.html"> Priority Queues & Heaps</a></li>
-
                         <li><a href="seaching.html"> Searching</a></li>
                         <li><a href="sorting.html"> Sorting</a></li>
                         <li><a href="graphs.html"> Graphs</a></li>
                         <li><a href="Trees.html"> Trees and binary trees</a></li>
-                        <li><a href="hashing.html"><b>Hashing</b> </a></li>
-                        <li><a href="tower.html"> Tower of Hanoi & Fibonacci Sq</a></li> 
+                        <li><a href="fibnfac.html"> Fibonacci & factorial</a></li> 
+                        <li><a href="tower.html"> Tower of Hanoi </a></li>
                     </ul>
                 </li>
                 <li><a href="ourclass.html">Our class team(group)</a></li>
@@ -56,38 +55,34 @@
 
     <section class="section video" data-section="section1">
         <div class="container">
-          <div class="row">
-            <div class="col-md-12 align-self-center">
-              <h1 class="format">Hashing </h1>
-           <iframe
-           src="assets/pdfs/lecture-10.pdf"  width="100%" height="700px"
-           >
-           </iframe>
-               
-
-      </div>
-           </div>
-        </div>
-      </section>
-
-    <section class="section why-us" data-section="section4">
-        <div class="container">
             <div class="row">
-                <div class="col-md-6 format ">
-                    <div class="left-content">
-                        <div class="main-button">
-                            <div class="scroll-to-section back"><a href="Trees.html">previous</a></div>
-                        </div>
+                <div class="col-md-12 align-self-center">
+                    <h1 class="format">The Fibonocci implementation</h1>
+
+                    <p class="format">
+                        The Fibonacci Sequence is the series of numbers:<br>
+
+                        0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...<br>
+
+                        The next number is found by adding up the two numbers before it:<br>
+
+                        =>the 2 is found by adding the two numbers before it (1+1),<br>
+                        =>the 3 is found by adding the two numbers before it (1+2),<br>
+                        =>the 5 is (2+3),<br>
+                        =>and so on!<br>
+                    </p>
+                    <form class="" action="" method="">
+                        <input type="number" id="numberF" placeholder="Enter the number of digits">
+                        <button id="return">Return</button>
+                    </form>
+                    <div class="format" id="returnm">
                     </div>
-                </div>
-                <div class="col-md-12 format">
-                    <div class="main-button">
-                        <div class="next"><a href="tower.html">Next</a></div>
-                    </div>
+
                 </div>
             </div>
         </div>
     </section>
+
 
     <footer>
         <div class="container">
@@ -102,8 +97,6 @@
     </footer>
 
 
-    <!-- Scripts -->
-    <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -161,6 +154,31 @@
         $(window).scroll(function () {
             checkSection();
         });
+    </script>
+    <script>
+
+        document.getElementById("return").addEventListener('click', (e) => {
+            const number = parseInt(document.getElementById("numberF").value);
+            document.getElementById("returnm").innerHTML = "Output: " +
+                fibonacci(document.getElementById('numberF').value);
+            document.getElementById('numberF').value = "";
+            e.preventDefault();
+        });
+
+        function fibonacci(num) {
+            var num1 = 0;
+            var num2 = 1;
+            var sum;
+            var out = [];
+            var i = 0;
+            for (i = 0; i < num; i++) {
+                sum = num1 + num2;
+                num1 = num2;
+                num2 = sum;
+                out[i] = num2;
+            }
+            return out;
+        }
     </script>
 
 </body>
